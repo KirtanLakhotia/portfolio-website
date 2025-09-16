@@ -1,0 +1,157 @@
+body {
+      background-color: #000;   /* Black background */
+
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+.navBar {
+    background-color: #0f0e0e; /* Dark background for the navbar */
+    padding: 10px 0;
+}
+.navBar .nav-link {
+    color: #0064E0; /* Blue text for links */
+    font-size: large;
+
+}
+.profileTextContainer{
+text-align: left;
+
+}
+.profileText{
+    color: white;
+    margin-top: 9rem;
+    margin-left: 10%;
+    text-align: left;
+}
+.Hello{
+    color: #0064E0;
+    font-style:italic;
+    font-family: "Lucida Handwriting";
+    font-weight: 600;
+    font-size: 3em;
+}
+.profileTextButton{
+    margin-top: 1.5rem;
+    background-color: #0064E0;
+    font-size: 1.2rem;
+
+}
+
+
+
+.profilePic {
+  display: block;
+  width: 100%;          /* fill parent column */
+  max-width: 380px;     /* don't grow past this size on large screens */
+  height: auto;         /* preserve aspect ratio */
+  border-radius: 25%;
+  margin-top: 5rem;
+  margin-left: 15%;
+  margin-bottom: 5rem;
+}
+
+.typing-line {
+  font-weight: 500;
+  margin-top: 0.5rem;
+  min-height: 1.4rem; /* avoid layout jump */
+  color: #0064E0;
+}
+
+/* blinking cursor */
+.typing-cursor {
+   
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  margin-left: 6px;
+  vertical-align: bottom;
+  animation: blink 0.8s steps(1) infinite;
+  background-color: white;
+
+  
+}
+
+/* intro container */
+
+.introContainer{
+    width: 90%;
+    
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: white;
+    border-radius: 45px;
+    text-align: center;
+}
+.introText{
+    font-size: 1.2rem;
+    font-weight: 400;
+    padding-left: 6%;
+    padding-right: 6%;
+    text-align: left;}
+
+/* footer section */
+.footer-container {
+  max-width: 720px;
+  margin: 0 auto;
+    padding-top: 10rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #bbb;
+}
+
+.footer-links a {
+  margin: 0 0.4rem;
+  font-weight: 500;
+}
+
+/* about page */
+.aboutHeading{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+.aboutText{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 5rem;
+    padding-left: 9%;
+    padding-right: 9%;
+}
+
+/* research section */
+.researchTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+    padding-top: 3rem;
+}
+.rearchContainer{
+    width: 80%;
+    background-color: white;
+    border-radius: 25px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+.researchText{
+
+    margin-bottom: 1rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+.researchHeading{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    text-align: center;
+    }
