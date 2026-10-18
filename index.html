@@ -17,9 +17,9 @@
   <li class="nav-item">
     <a class="nav-link " href="/index.html">Home</a>
   </li>
-  <li class="nav-item">
+  <!-- <li class="nav-item">
     <a class="nav-link" href="./about.html">About</a>
-  </li>
+  </li> -->
   <li class="nav-item">
     <a class="nav-link" href="./project.html">Projects</a>
   </li>
@@ -78,6 +78,58 @@
 
 
 
+<!-- experience timeline -->
+<section class="experienceTimeline" aria-labelledby="experienceTitle">
+  <div class="experienceTimelineHeader">
+    <p class="sectionEyebrow">Experience</p>
+    <h2 id="experienceTitle">A journey of learning and growth</h2>
+    <p>From research internships to working in banking technology, every stage has added a new layer to my engineering journey.</p>
+  </div>
+
+  <div class="experienceExplorer">
+    <div class="experienceRail" role="list" aria-label="Experience timeline">
+      <button class="timelinePoint isActive" type="button" role="listitem" data-experience="deutsche" aria-pressed="true">
+        <span class="timelineThumb"><img src="images/deutscheBankLogoWhite.png" alt="Deutsche Bank logo"></span>
+        <span class="timelinePointText"><strong>Deutsche Bank</strong><small>Current stage · Present</small></span>
+        <span class="timelineArrow" aria-hidden="true">→</span>
+      </button>
+      <button class="timelinePoint " type="button" role="listitem" data-experience="medibuddy" aria-pressed="false">
+        <span class="timelineThumb"><img src="images/medibuddyLogo.jpg" alt="Medibuddy logo"></span>
+        <span class="timelinePointText"><strong>Medibuddy</strong><small>Internship experience</small></span>
+        <span class="timelineArrow" aria-hidden="true">→</span>
+      </button>
+      <button class="timelinePoint" type="button" role="listitem" data-experience="softinator" aria-pressed="false">
+        <span class="timelineThumb"><img src="images/softinator.png" alt=""></span>
+        <span class="timelinePointText"><strong>Softinator TechLabs</strong><small>Software internship · 2025</small></span>
+        <span class="timelineArrow" aria-hidden="true">→</span>
+      </button>
+      <button class="timelinePoint" type="button" role="listitem" data-experience="iiser" aria-pressed="false">
+        <span class="timelineThumb"><img src="images/IISER.jpg" alt=""></span>
+        <span class="timelinePointText"><strong>IISER Bhopal</strong><small>Research internship · 2024</small></span>
+        <span class="timelineArrow" aria-hidden="true">→</span>
+      </button>
+      <button class="timelinePoint" type="button" role="listitem" data-experience="iiitn" aria-pressed="false">
+        <span class="timelineThumb"><img src="images/IIITN.png" alt=""></span>
+        <span class="timelinePointText"><strong>IIIT Nagpur</strong><small>Hybrid internship · 2023</small></span>
+        <span class="timelineArrow" aria-hidden="true">→</span>
+      </button>
+    </div>
+
+    <article class="experienceFeature" id="experienceFeature" aria-live="polite">
+      <div class="featureImageFrame">
+        <img id="featureImage" src="images/deutsche-bank.svg" alt="Deutsche Bank logo" class="featureImage">
+        <span id="featureStatus" class="featureStatus">Currently here</span>
+      </div>
+      <div class="featureBody">
+        <div class="featureMeta"><span id="featurePeriod">Current</span><span id="featurePlace">Professional experience</span></div>
+        <h3 id="featureTitle">Deutsche Bank</h3>
+        <p id="featureDescription">Currently building professional experience at Deutsche Bank, working in a collaborative banking technology environment and growing as a software engineer.</p>
+        <!-- <p class="featureHint">Select a stage to explore</p> -->
+      </div>
+    </article>
+  </div>
+</section>
+
 <!-- end div container -->
 <footer>
       <div class="footer-container">
@@ -131,6 +183,102 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     setTimeout(type, 600); // small initial delay
+  });
+</script>
+
+<script>
+  const experienceDetails = {
+    deutsche: {
+      image: 'images/deutscheBankLogoWhite.png', imageAlt: 'Deutsche Bank logo', status: 'Currently here',
+      period: 'Current', place: 'Professional experience', title: 'Deutsche Bank',
+      description: 'Currently building professional experience at Deutsche Bank, working in a collaborative banking technology environment and growing as a software engineer.'
+    },
+    medibuddy: {
+      image: 'images/medibuddyCertificate.png', imageAlt: 'Medibuddy internship certificate', status: 'Internship',
+      period: 'Internship', place: 'Healthcare technology', title: 'Medibuddy',
+      description: 'Completed an internship at Medibuddy, gaining practical experience in a healthcare technology environment and developing as a software engineer.'
+    },
+    softinator: {
+      image: 'images/softinator.png', imageAlt: 'Softinator TechLabs', status: 'Internship',
+      period: '2025', place: 'Software internship', title: 'Softinator TechLabs',
+      description: 'Gained hands-on experience in Python while learning business standards and software-industry workflows in a fast-paced environment.'
+    },
+    iiser: {
+      image: 'images/IISER.jpg', imageAlt: 'IISER Bhopal', status: 'Internship',
+      period: '2024 · 60 days', place: 'Research internship · Bhopal', title: 'IISER Bhopal',
+      description: 'Worked on Hindi task language generation with large language models, gaining valuable research experience beyond the classroom.'
+    },
+    iiitn: {
+      image: 'images/IIITN.png', imageAlt: 'IIIT Nagpur', status: 'Internship',
+      period: '2023 · 15 days on campus', place: 'Hybrid internship · Nagpur', title: 'IIIT Nagpur',
+      description: 'Completed a hybrid internship under Dr. Jitendra Tamburne, combining technical learning with an enriching on-campus experience.'
+    }
+  };
+
+  const timelinePoints = document.querySelectorAll('.timelinePoint');
+  const experienceExplorer = document.querySelector('.experienceExplorer');
+  const experienceRail = document.querySelector('.experienceRail');
+  const experienceFeature = document.getElementById('experienceFeature');
+  const mobileExperienceLayout = window.matchMedia('(max-width: 768px)');
+
+  function placeExperienceDetails(point) {
+    if (mobileExperienceLayout.matches && point && point.parentElement === experienceRail) {
+      point.after(experienceFeature);
+    } else if (!mobileExperienceLayout.matches && experienceFeature.parentElement !== experienceExplorer) {
+      experienceExplorer.appendChild(experienceFeature);
+      experienceFeature.classList.remove('isCollapsed');
+      experienceFeature.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  function closeExperienceDetails() {
+    experienceFeature.classList.add('isCollapsed');
+    experienceFeature.setAttribute('aria-hidden', 'true');
+  }
+
+  function showExperience(location) {
+    const details = experienceDetails[location];
+    if (!details) return;
+
+    experienceFeature.classList.remove('isCollapsed');
+    experienceFeature.setAttribute('aria-hidden', 'false');
+    document.getElementById('featureImage').src = details.image;
+    document.getElementById('featureImage').alt = details.imageAlt;
+    document.getElementById('featureStatus').textContent = details.status;
+    document.getElementById('featurePeriod').textContent = details.period;
+    document.getElementById('featurePlace').textContent = details.place;
+    document.getElementById('featureTitle').textContent = details.title;
+    document.getElementById('featureDescription').textContent = details.description;
+
+    timelinePoints.forEach((point) => {
+      const active = point.dataset.experience === location;
+      point.classList.toggle('isActive', active);
+      point.setAttribute('aria-pressed', String(active));
+      if (active) placeExperienceDetails(point);
+    });
+  }
+
+  timelinePoints.forEach((point) => {
+    point.addEventListener('mouseenter', () => {
+      if (!mobileExperienceLayout.matches) showExperience(point.dataset.experience);
+    });
+    point.addEventListener('focus', () => {
+      if (!mobileExperienceLayout.matches) showExperience(point.dataset.experience);
+    });
+    point.addEventListener('click', () => {
+      if (mobileExperienceLayout.matches && point.classList.contains('isActive') && !experienceFeature.classList.contains('isCollapsed')) {
+        closeExperienceDetails();
+      } else {
+        showExperience(point.dataset.experience);
+      }
+    });
+  });
+
+  placeExperienceDetails(document.querySelector('.timelinePoint.isActive'));
+  if (mobileExperienceLayout.matches) closeExperienceDetails();
+  mobileExperienceLayout.addEventListener('change', () => {
+    placeExperienceDetails(document.querySelector('.timelinePoint.isActive'));
+    if (mobileExperienceLayout.matches) closeExperienceDetails();
   });
 </script>
 

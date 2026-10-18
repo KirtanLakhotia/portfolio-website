@@ -127,6 +127,66 @@ padding: 8%;
     padding-right: 3%;
   }
 }
+
+/* experience timeline */
+.experienceTimeline {
+  width: min(1120px, 92%);
+  margin: 5rem auto 2rem;
+  padding: 3rem 0;
+  color: #fff;
+}
+.experienceTimelineHeader { max-width: 700px; margin-bottom: 2rem; }
+.sectionEyebrow { margin: 0 0 0.5rem; color: #55aaff; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+.experienceTimelineHeader h2 { margin-bottom: 0.75rem; font-size: clamp(2rem, 4vw, 3.2rem); }
+.experienceTimelineHeader > p:last-child { margin: 0; color: #b7c3d1; line-height: 1.7; }
+.experienceExplorer { display: grid; grid-template-columns: minmax(250px, 0.82fr) minmax(0, 1.18fr); align-items: stretch; gap: clamp(1.5rem, 5vw, 3rem); }
+.experienceRail { position: relative; display: flex; flex-direction: column; gap: 0.7rem; }
+.experienceRail::before { position: absolute; top: 2rem; bottom: 2rem; left: 1.8rem; width: 1px; content: ''; background: #0064e0; opacity: 0.65; }
+.timelinePoint { position: relative; z-index: 1; display: grid; grid-template-columns: 58px minmax(0, 1fr) 24px; align-items: center; gap: 0.8rem; width: 100%; padding: 0.7rem; border: 1px solid transparent; border-radius: 6px; background: transparent; color: #fff; text-align: left; cursor: pointer; transition: background-color 0.2s ease, border-color 0.2s ease; }
+.timelinePoint:hover, .timelinePoint:focus-visible, .timelinePoint.isActive { border-color: rgba(0, 100, 224, 0.5); background: #111; outline: none; }
+.timelineThumb { display: grid; place-items: center; width: 58px; height: 58px; overflow: hidden; border: 2px solid #333; border-radius: 50%; background: #fff; }
+.timelinePoint.isActive .timelineThumb { border-color: #55aaff; }
+.timelineThumb img { width: 100%; height: 100%; object-fit: cover; }
+.timelinePointText { min-width: 0; }
+.timelinePointText strong, .timelinePointText small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.timelinePointText strong { font-size: 0.98rem; }
+.timelinePointText small { margin-top: 0.25rem; color: #91a5bb; font-size: 0.76rem; }
+.timelineArrow { color: #6384a4; font-size: 1.2rem; transition: transform 0.25s ease; }
+.timelinePoint.isActive .timelineArrow { color: #0064e0; transform: translateX(4px); }
+.experienceFeature { overflow: hidden; border: 1px solid #333; border-radius: 8px; background: #111; color: #fff; }
+.experienceFeature.isCollapsed { display: none; }
+.featureImageFrame { position: relative; height: 270px; overflow: hidden; background: #dce8f5; }
+.featureImage { display: block; width: 100%; height: 100%; object-fit: cover; transition: opacity 0.2s ease; }
+.featureStatus { position: absolute; bottom: 1rem; left: 1rem; padding: 0.4rem 0.7rem; border-radius: 4px; background: #0064e0; color: #fff; font-size: 0.75rem; font-weight: 700; }
+.featureBody { padding: 1.6rem; }
+.featureMeta { display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; margin-bottom: 0.6rem; color: #0064e0; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+.featureMeta span + span { color: #aaa; }
+.featureBody h3 { margin-bottom: 0.7rem; font-size: clamp(1.5rem, 3vw, 2.1rem); }
+.featureBody > p:not(.featureHint) { margin-bottom: 0; color: #ccc; line-height: 1.75; }
+.featureHint { margin: 1.35rem 0 0; color: #888; font-size: 0.78rem; }
+
+@media (max-width: 768px) {
+  .experienceTimeline { width: 92%; margin-top: 3rem; padding: 2.25rem 0; }
+  .experienceExplorer { grid-template-columns: 1fr; gap: 1.5rem; }
+  .experienceRail { display: flex; flex-direction: column; gap: 0.75rem; }
+  .experienceRail::before { display: none; }
+  .timelinePoint { display: flex; flex-direction: column; align-items: flex-start; gap: 0.55rem; min-height: 132px; padding: 0.8rem; border-color: #292929; border-radius: 6px; }
+  .timelinePoint:hover, .timelinePoint:focus-visible, .timelinePoint.isActive { transform: none; }
+  .timelineThumb { width: 46px; height: 46px; }
+  .timelinePointText { width: 100%; }
+  .timelinePointText strong, .timelinePointText small { white-space: normal; }
+  .timelinePointText strong { font-size: 0.88rem; line-height: 1.25; }
+  .timelinePointText small { font-size: 0.7rem; line-height: 1.35; }
+  .timelineArrow { display: none; }
+  .experienceFeature { width: 100%; margin: 0.1rem 0 0.35rem; }
+  .featureImageFrame { height: 210px; }
+}
+
+@media (max-width: 420px) {
+  .timelinePoint { min-height: 0; flex-direction: row; align-items: center; }
+  .timelineThumb { flex: 0 0 46px; }
+}
+
 /* footer section */
 .footer-container {
   max-width: 720px;

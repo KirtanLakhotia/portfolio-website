@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Deutsche Bank</title>
+  <desc id="desc">A blue square with the Deutsche Bank diagonal symbol and name.</desc>
+  <rect width="800" height="500" rx="28" fill="#071829"/>
+  <rect x="205" y="115" width="170" height="170" fill="none" stroke="#55aaff" stroke-width="18"/>
+  <path d="M205 285 375 115" fill="none" stroke="#55aaff" stroke-width="18"/>
+  <text x="420" y="212" fill="#ffffff" font-family="Arial, sans-serif" font-size="42" font-weight="700">Deutsche</text>
+  <text x="420" y="264" fill="#55aaff" font-family="Arial, sans-serif" font-size="42" font-weight="700">Bank</text>
+</svg>
