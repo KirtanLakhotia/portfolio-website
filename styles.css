@@ -5,6 +5,15 @@ body {
       margin: 0;
     }
 
+.heroSection {
+    min-height: 100vh;
+    background-image: url('images/bg-dark.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
 .navBar {
     background-color: #0f0e0e; /* Dark background for the navbar */
     padding: 10px 0;
@@ -20,13 +29,18 @@ text-align: left;
 }
 .profileText{
     color: white;
-    margin-top: 9rem;
+    margin-top: 8rem;
     margin-left: 10%;
     text-align: left;
 }
 @media (max-width: 768px) {
+.heroSection {
+    min-height: 100svh;
+}
 .profileText{
-    margin-top: 4rem;
+    margin-top: 3rem;
+    margin-left: 0;
+    text-align: center;
 }
 }
 .Hello{
@@ -48,10 +62,10 @@ text-align: left;
 .profilePic {
   display: block;
   width: 100%;          /* fill parent column */
-  max-width: 380px;     /* don't grow past this size on large screens */
+  max-width: 350px;     /* don't grow past this size on large screens */
   height: auto;         /* preserve aspect ratio */
   border-radius: 25%;
-  margin-top: 5rem;
+  margin-top: 6rem;
   margin-left: 15%;
   margin-bottom: 5rem;
 }
@@ -59,8 +73,8 @@ text-align: left;
 .profilePic{
     margin-left: 0%;
     width: 100%;
-    margin-top: 2.7rem; 
-     margin-bottom: 4rem;
+    margin-top: 2rem; 
+     margin-bottom: 2rem;
 }
 .profilePicContainer{
 padding: 8%;
